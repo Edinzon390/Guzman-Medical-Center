@@ -108,6 +108,9 @@
       left: -20px;
       display: grid;
       width: 260px;
+      max-height: min(70vh, 420px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
       padding: 9px;
       border: 1px solid var(--border);
       border-radius: 14px;
