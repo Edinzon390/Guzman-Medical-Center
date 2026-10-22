@@ -360,6 +360,10 @@
     .footer p { margin: 0; color: #c1cbd7; font-size: .78rem; }
     .footer-address { color: #c1cbd7; font-size: .78rem; text-decoration: underline; text-underline-offset: 3px; }
     .footer-address:hover { color: white; }
+    .footer-socials { display: flex; align-items: center; gap: 12px; }
+    .footer-socials a { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, .35); border-radius: 50%; color: white; }
+    .footer-socials a:hover { background: rgba(255, 255, 255, .12); }
+    .footer-socials svg { width: 19px; height: 19px; fill: currentColor; }
 
     :focus-visible { outline: 3px solid #6da1df; outline-offset: 3px; }
     @keyframes motion-enter {
