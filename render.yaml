@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: guzman-medical-center
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
