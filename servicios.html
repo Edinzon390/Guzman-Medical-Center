@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123c72">
+  <link rel="icon" type="image/png" href="images/Logo.png">
+  <meta name="description" content="Conoce los servicios de Guzman Medical Center y solicita información para recibir orientación sobre tu atención.">
+  <title>Servicios • Guzman Medical Center</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav" aria-label="Navegación principal">
+      <a class="brand" href="index.html#inicio" aria-label="Guzman Medical Center, ir al inicio"><img class="brand-logo" src="images/Logo-GMC-removebg-preview.png" alt="Logo Guzman Medical Center"></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#nosotros">Sobre nosotros</a>
+        <a href="servicios.html" aria-current="page">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/message/KALJBUTD2IDBL1?src=qr">Solicitar información</a>
+    </nav>
+  </header>
+  <main>
+    <section class="services-catalog" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Guzman Medical Center</span>
+          <h1>Servicios para cuidar de ti</h1>
+          <p>Conoce las opciones de atención disponibles. Cada servicio se brinda de acuerdo con la evaluación y las necesidades de cada paciente; contáctanos para recibir orientación y coordinar tu visita.</p>
+        </div>
+        <div class="services-search">
+          <label for="service-search">Buscar un servicio</label>
+          <div class="services-search-controls">
+            <input id="service-search" type="search" placeholder="Ej.: laboratorio, cirugía, sonografía" autocomplete="off" aria-controls="services-list">
+            <button id="service-search-clear" type="button" disabled>Limpiar</button>
+          </div>
+          <p id="service-search-status" role="status" aria-live="polite">Se muestran los 14 servicios.</p>
+        </div>
+        <div class="services-cards" id="services-list">
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h2l1.2-2.5L13 15l1.2-3H16"/></svg></span>
+            <h2>Consulta general y especializada</h2>
+            <p>Atención personalizada para conversar sobre tus inquietudes, evaluar síntomas y recibir orientación sobre los siguientes pasos para tu salud.</p>
+            <a class="service-card-link" href="servicios/consulta-general-especializada.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/><path d="M20 5v4m-2-2h4"/></svg></span>
+            <h2>Emergencia</h2>
+            <p>Atención para situaciones que requieren valoración urgente. Comunícate con el centro para confirmar disponibilidad y recibir orientación.</p>
+            <a class="service-card-link" href="servicios/emergencia.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+            <h2>Laboratorio clínico</h2>
+            <p>Pruebas clínicas que apoyan la evaluación y el seguimiento de la salud. Consulta si tu análisis requiere preparación previa.</p>
+            <a class="service-card-link" href="servicios/laboratorio.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.2 2.2 3.2 4.9 3.2 8s-1 5.8-3.2 8c-2.2-2.2-3.2-4.9-3.2-8S9.8 6.2 12 4Z"/></svg></span>
+            <h2>Sonografía</h2>
+            <p>Estudios de imagen para evaluar distintas áreas del cuerpo. La preparación depende del tipo de estudio; consúltala al coordinar.</p>
+            <a class="service-card-link" href="servicios/sonografia.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16M20 4v16M4 12h16M8 8h8M8 16h8"/></svg></span>
+            <h2>Ultrasonido</h2>
+            <p>Evaluación por imágenes de órganos y tejidos, indicada de acuerdo con las necesidades de cada paciente.</p>
+            <a class="service-card-link" href="servicios/ultrasonido.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h3l2-6 4 10 2-4h5"/><path d="M12 3v2m0 14v2"/></svg></span>
+            <h2>Electrocardiografía</h2>
+            <p>Registro de la actividad eléctrica del corazón como apoyo a la valoración y seguimiento cardiovascular.</p>
+            <a class="service-card-link" href="servicios/electrocardiografia.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v5a7 7 0 0 0 14 0V4"/><path d="M5 4h4M15 4h4M12 16v4m-4 0h8"/></svg></span>
+            <h2>Endoscopia digestiva</h2>
+            <p>Evaluación diagnóstica del tracto digestivo. El profesional indicará el procedimiento y las instrucciones previas necesarias.</p>
+            <a class="service-card-link" href="servicios/endoscopia-digestiva.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/><path d="M5 5c2-2 4-2 6 0m2 14c2 2 4 2 6 0"/></svg></span>
+            <h2>Espirometría</h2>
+            <p>Prueba funcional que ayuda a valorar la función pulmonar, con indicaciones explicadas por el personal de salud.</p>
+            <a class="service-card-link" href="servicios/espirometria.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 11-11 4 4L7 21H3v-4Z"/><path d="m12 8 4 4m2-8 2 2"/></svg></span>
+            <h2>Cirugía general</h2>
+            <p>Atención quirúrgica de acuerdo con la valoración médica, con orientación sobre el proceso y el seguimiento.</p>
+            <a class="service-card-link" href="servicios/cirugia-general.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v7a4 4 0 0 0 8 0V3M6 3h4m4 0h4M12 14v7m-3 0h6"/></svg></span>
+            <h2>Cirugía ortopédica</h2>
+            <p>Evaluación profesional de condiciones musculoesqueléticas y orientación sobre opciones de tratamiento.</p>
+            <a class="service-card-link" href="servicios/cirugia-ortopedica.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m8 16 3-8 2 5 1-2 2 5"/></svg></span>
+            <h2>Rayos X</h2>
+            <p>Estudios radiográficos indicados para apoyar la evaluación médica. Confirma los requisitos al coordinar tu estudio.</p>
+            <a class="service-card-link" href="servicios/rayos-x.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18H5z"/><path d="M9 8h6m-6 4h6m-6 4h4"/></svg></span>
+            <h2>Internamientos</h2>
+            <p>Observación o atención continua cuando el profesional de salud determina que es necesaria.</p>
+            <a class="service-card-link" href="servicios/internamiento.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8m-4-4v8"/></svg></span>
+            <h2>Papanicolaou</h2>
+            <p>Prueba preventiva para detectar cambios cervicales y apoyar el cuidado de la salud femenina.</p>
+            <a class="service-card-link" href="servicios/papanicolaou.html">Ver servicio</a>
+          </article>
+          <article class="service-card">
+            <span class="service-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4-7-11V5l7-3 7 3v5c0 7-7 11-7 11Z"/><path d="M9 12h6m-3-3v6"/></svg></span>
+            <h2>Detección de cáncer uterino</h2>
+            <p>Orientación y pruebas preventivas de acuerdo con la evaluación y el historial de cada paciente.</p>
+            <a class="service-card-link" href="servicios/deteccion-ca-uterino.html">Ver servicio</a>
+          </article>
+        </div>
+        <div class="services-contact">
+          <h2>¿Tienes dudas sobre qué servicio necesitas?</h2>
+          <p>Comunícate con nuestro equipo para recibir orientación y coordinar tu visita.</p>
+          <a class="button" href="https://wa.me/message/KALJBUTD2IDBL1?src=qr">Contáctanos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><a class="brand" href="index.html#inicio" aria-label="Guzman Medical Center, ir al inicio"><img class="brand-logo" src="images/Logo-GMC-removebg-preview.png" alt="Logo Guzman Medical Center"></a><a class="footer-address" href="https://www.google.com/maps/search/?api=1&amp;query=Carretera+Jacagua+158+Buenos+Aires+Santiago+R.D." target="_blank" rel="noopener noreferrer">Carretera Jacagua #158 Buenos Aires, Santiago R.D.</a><p>© 2017 Guzman Medical Center, Con todos los derechos reservados.</p><div class="footer-socials" aria-label="Redes sociales"><a href="https://www.instagram.com/gmc.medicalcenter/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg></a><a href="https://web.facebook.com/ClinicaDrGuzmanRD/?_rdc=1&amp;_rdr#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h3.4z"/></svg></a></div></div></footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
