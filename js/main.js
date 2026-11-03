@@ -43,6 +43,14 @@
           menuToggle.setAttribute("aria-label", "Abrir menú");
         });
       });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape" || !navLinks.classList.contains("is-open")) return;
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+        menuToggle.focus();
+      });
     }
 
     document.querySelectorAll("[data-carousel]").forEach((carousel) => {

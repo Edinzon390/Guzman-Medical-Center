@@ -14,7 +14,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 140px; }
     body {
       margin: 0;
       color: var(--ink);
@@ -25,6 +25,19 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
     .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      padding: 11px 15px;
+      transform: translateY(calc(-100% - 20px));
+      border-radius: 8px;
+      background: white;
+      color: var(--blue-dark);
+      font-weight: 750;
+    }
+    .skip-link:focus { transform: translateY(0); }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -194,15 +207,24 @@
       gap: 8px;
     }
     .carousel-dot {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+    .carousel-dot::before {
       width: 9px;
       height: 9px;
-      padding: 0;
       border: 1px solid white;
       border-radius: 50%;
       background: rgba(255, 255, 255, .55);
-      cursor: pointer;
+      content: "";
     }
-    .carousel-dot.is-active { width: 24px; border-radius: 8px; background: white; }
+    .carousel-dot.is-active::before { width: 24px; border-radius: 8px; background: white; }
     .hero-image .hero-badge { z-index: 2; }
     @media (prefers-reduced-motion: reduce) {
       .hero-slide { transition: none; }
@@ -272,6 +294,7 @@
     .hero-badge svg { width: 22px; height: 22px; color: var(--blue); }
 
     .about { padding: 96px 0; background: linear-gradient(180deg, #f4f8fd 0%, #ffffff 100%); }
+    .visit-guide-section { padding: 64px 0; background: #f7f5f3; }
     .identity-section { display: grid; gap: 26px; }
     .identity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .identity-card {
@@ -320,6 +343,15 @@
 
     .contact { padding: 94px 0; }
     .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 65px; align-items: start; }
+    .visit-guide { padding: 30px; border: 1px solid var(--border); border-radius: var(--radius); background: white; box-shadow: 0 12px 30px rgba(17, 29, 43, .06); }
+    .visit-guide-heading { max-width: 720px; margin-bottom: 22px; }
+    .visit-guide-heading h2 { margin: 8px 0; color: var(--ink); font-size: 1.7rem; }
+    .visit-guide-heading p { margin: 0; color: var(--muted); }
+    .visit-guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .visit-guide-card { padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: white; }
+    .visit-guide-card h3 { margin: 0 0 8px; color: var(--ink); font-size: 1rem; }
+    .visit-guide-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+    .visit-guide-card a { display: inline-block; margin-top: 12px; color: var(--blue); font-size: .88rem; font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
     .contact-map { grid-column: 1 / -1; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: white; box-shadow: 0 12px 30px rgba(17, 29, 43, .06); }
     .contact-map-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 28px; }
     .contact-map-heading h2 { margin: 8px 0 4px; color: var(--ink); font-size: 1.45rem; }
@@ -328,6 +360,8 @@
     .contact-copy h2 { margin: 13px 0; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -.045em; line-height: 1.12; }
     .contact-copy > p { color: var(--muted); }
     .contact-list { display: grid; gap: 18px; margin-top: 28px; }
+    .contact-social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 26px; color: var(--muted); font-size: .88rem; }
+    .contact-social-links a { color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
     .contact-item { display: flex; align-items: flex-start; gap: 13px; }
     .contact-item .value-icon { width: 39px; height: 39px; }
     .contact-item strong { display: block; font-size: .88rem; }
@@ -367,7 +401,9 @@
     .footer-socials a:hover { background: rgba(255, 255, 255, .12); }
     .footer-socials svg { width: 19px; height: 19px; fill: currentColor; }
 
-    :focus-visible { outline: 3px solid #6da1df; outline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+    .topbar :focus-visible,
+    .footer :focus-visible { outline-color: white; }
     @keyframes motion-enter {
       from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
@@ -420,19 +456,8 @@
     .contact-form textarea { transition: border-color .2s ease, box-shadow .2s ease; }
     @media (max-width: 950px) {
       .nav-links { gap: 18px; }
-      .hero-grid { gap: 35px; }
-      .identity-grid { gap: 14px; }
-      .identity-card { padding: 22px; }
-      .service-detail-grid { gap: 35px; }
-      .services-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .contact-grid { gap: 38px; }
-    }
-    @media (max-width: 760px) {
-      .container { width: min(100% - 36px, 560px); }
-      .topbar-inner { justify-content: center; text-align: center; }
-      .topbar-inner p + p { display: none; }
       .nav { min-height: 110px; gap: 12px; }
-      .brand-logo { width: clamp(230px, calc(100vw - 100px), 340px); max-height: 105px; }
+      .brand-logo { width: min(340px, calc(100vw - 105px)); max-height: 105px; transform: translateX(-8px); }
       .menu-toggle { display: inline-flex; }
       .nav-cta { display: none; }
       .nav-links {
@@ -450,6 +475,17 @@
       }
       .nav-links.is-open { display: flex; flex-direction: column; }
       .nav-links > a { padding: 9px 0; }
+      .hero-grid { gap: 35px; }
+      .identity-grid { gap: 14px; }
+      .identity-card { padding: 22px; }
+      .service-detail-grid { gap: 35px; }
+      .services-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid { gap: 38px; }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 36px, 560px); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar-inner p + p { display: none; }
       .hero { padding: 58px 0 68px; }
       .hero-grid, .contact-grid, .service-detail-grid { grid-template-columns: 1fr; }
       .services-cards { grid-template-columns: 1fr; gap: 16px; }
@@ -459,10 +495,13 @@
       .hero-image { min-height: 330px; }
       .hero-badge { right: 10px; }
       .about, .service-detail { padding: 70px 0; }
+      .visit-guide-section { padding: 48px 0; }
       .identity-grid { grid-template-columns: 1fr; }
       .service-photo { min-height: 300px; }
       .contact { padding: 70px 0; }
       .contact-grid { gap: 30px; }
+      .visit-guide { padding: 22px 18px; }
+      .visit-guide-grid { grid-template-columns: 1fr; }
       .contact-map-heading { align-items: flex-start; flex-direction: column; padding: 20px; }
       .contact-map-heading .button { width: 100%; }
       .contact-map-frame { height: 300px; }
@@ -472,6 +511,7 @@
       .section-heading { margin-bottom: 30px; }
       .hero-actions .button { width: 100%; }
       .hero-image { min-height: 285px; }
+      .carousel-dots { left: 10px; gap: 4px; }
       .identity-card { padding: 20px; }
       .service-photo { min-height: 260px; }
       .contact-card { padding: 20px 16px; }
