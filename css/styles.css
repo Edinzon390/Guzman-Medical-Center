@@ -296,6 +296,17 @@
     .identity-card p { margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.7; }
     .identity-card p + p { margin-top: 12px; }
 
+    .specialists-section { padding: 76px 0; background: #f7f5f3; }
+    .specialists-section .section-heading { margin-bottom: 32px; }
+    .specialists-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+    .specialist-card { overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: white; text-align: center; box-shadow: 0 9px 24px rgba(17, 29, 43, .06); }
+    .specialist-photo { display: grid; height: 210px; place-items: center; background: linear-gradient(145deg, #eaf2fb, #dce4ee); }
+    .specialist-photo::before { width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(circle at 50% 32%, var(--specialist-icon-color, var(--blue)) 0 18%, transparent 19%), radial-gradient(ellipse at 50% 100%, var(--specialist-icon-color, var(--blue)) 0 38%, transparent 39%); content: ""; }
+    .specialist-card--female { --specialist-icon-color: #c23a72; }
+    .specialist-card--male { --specialist-icon-color: var(--blue); }
+    .specialist-card h3 { margin: 18px 14px 5px; color: var(--ink); font-size: 1.08rem; line-height: 1.35; }
+    .specialist-card p { margin: 0 14px 20px; color: var(--muted); font-size: .92rem; }
+
     .service-detail { padding: 76px 0 92px; background: linear-gradient(115deg, #f5f8fc 0%, #fff 72%); }
     .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 58px; }
     .services-catalog { padding: 76px 0 92px; background: #f7f5f3; }
@@ -465,6 +476,8 @@
       .hero-grid { gap: 35px; }
       .identity-grid { gap: 14px; }
       .identity-card { padding: 22px; }
+      .specialists-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+      .specialist-photo { height: 190px; }
       .service-detail-grid { gap: 35px; }
       .services-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-grid { gap: 38px; }
@@ -482,8 +495,11 @@
       .hero-image { min-height: 330px; }
       .hero-badge { right: 10px; }
       .about, .service-detail { padding: 70px 0; }
+      .specialists-section { padding: 60px 0; }
       .visit-guide-section { padding: 48px 0; }
       .identity-grid { grid-template-columns: 1fr; }
+      .specialists-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .specialist-photo { height: 170px; }
       .service-photo { min-height: 300px; }
       .contact { padding: 70px 0; }
       .contact-grid { gap: 30px; }
@@ -500,6 +516,9 @@
       .hero-image { min-height: 285px; }
       .carousel-dots { left: 10px; gap: 4px; }
       .identity-card { padding: 20px; }
+      .specialist-photo { height: 145px; }
+      .specialist-card h3 { margin: 14px 10px 5px; font-size: 1rem; }
+      .specialist-card p { margin: 0 10px 16px; font-size: .86rem; }
       .service-photo { min-height: 260px; }
       .contact-card { padding: 20px 16px; }
       .contact-form { grid-template-columns: 1fr; }
