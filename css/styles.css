@@ -92,6 +92,8 @@
     .nav-links { display: flex; align-items: center; gap: 30px; }
     .nav-links > a { color: #374456; font-size: 1rem; font-weight: 650; transition: color .2s ease; }
     .nav-links > a:hover { color: var(--blue); }
+    .language-toggle { min-height: 44px; padding: 0 4px; border: 0; background: transparent; color: #374456; font: inherit; font-size: 1rem; font-weight: 650; cursor: pointer; }
+    .language-toggle:hover { color: var(--blue); }
     .nav-cta, .button {
       display: inline-flex;
       min-height: 45px;
@@ -452,7 +454,7 @@
     .contact-form input,
     .contact-form select,
     .contact-form textarea { transition: border-color .2s ease, box-shadow .2s ease; }
-    @media (max-width: 950px) {
+    @media (max-width: 1320px) {
       .nav-links { gap: 18px; }
       .nav { min-height: 110px; gap: 12px; }
       .brand-logo { width: min(340px, calc(100vw - 105px)); max-height: 105px; transform: translateX(-8px); }
@@ -473,6 +475,7 @@
       }
       .nav-links.is-open { display: flex; flex-direction: column; }
       .nav-links > a { padding: 9px 0; }
+      .language-toggle { align-self: flex-start; }
       .hero-grid { gap: 35px; }
       .identity-grid { gap: 14px; }
       .identity-card { padding: 22px; }
